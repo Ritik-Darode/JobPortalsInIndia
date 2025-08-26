@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Job Portals India - Find Your Dream Career</title>
+    <meta name="description" content="Comprehensive list of top job portals in India. Discover the best platforms to find your next career opportunity.">
+    
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .portal-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .portal-card:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+        }
+
+        /* Distinct Music Player */
+        .music-player {
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .music-btn {
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .music-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(1.1);
+        }
+
+        .floating-shapes::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .floating-shapes::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            right: 15%;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <header class="gradient-bg relative overflow-hidden floating-shapes">
+        <div class="container mx-auto px-4 py-16 md:py-24 relative z-10">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+                    <span class="block">Find Your</span>
+                    <span class="block text-yellow-300">Dream Career</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
+                    Discover India's top job portals and unlock endless career opportunities
+                </p>
+                
+                <!-- Distinct Music Player -->
+                <div class="max-w-md mx-auto mb-8">
+                    <div class="music-player rounded-full p-4 flex items-center justify-center space-x-4">
+                        <button id="playPauseBtn" class="music-btn w-12 h-12 rounded-full flex items-center justify-center">
+                            <i id="playPauseIcon" class="fas fa-play text-white text-lg"></i>
+                        </button>
+                        <div class="text-white">
+                            <p class="text-sm opacity-90 font-semibold">Lo-Fi Background Music</p>
+                            <p id="musicStatus" class="text-xs opacity-70">Click to play</p>
+                        </div>
+                        <button id="muteBtn" class="music-btn w-10 h-10 rounded-full flex items-center justify-center">
+                            <i id="muteIcon" class="fas fa-volume-up text-white text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Hidden audio element -->
+                <audio id="bgMusic" src="assets/lofi.mp3" loop></audio>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16">
+        <!-- Job Portals Grid -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Top Job Portals in India</h2>
+                <p class="text-gray-600 text-lg">Click on any portal to explore opportunities</p>
+            </div>
+            <div id="portalsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Portal cards will be generated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="text-center bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 md:p-16 text-white">
+            <div class="max-w-3xl mx-auto">
+                <i class="fas fa-download text-5xl mb-6 opacity-80"></i>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Get the Complete List</h2>
+                <p class="text-xl mb-8 opacity-90">Download our comprehensive Excel file with all job portals, their details, and direct links</p>
+                <a href="assets/List%20of%20Job%20Portals%20in%20INDIA.xlsx" 
+                   download 
+                   class="inline-flex items-center bg-white text-indigo-600 font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-file-excel mr-3 text-green-500"></i>
+                    Download Excel File
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold mb-4">Job Portals India</h3>
+                <p class="text-gray-400 max-w-2xl mx-auto">Your gateway to discovering the best job opportunities across India. Find the perfect platform for your career growth.</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-gray-400">&copy; 2025 Job Portals India. Hosted on GitHub Pages.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Job portals data (shortened for example, you can keep your full list)
+        const jobPortals = [
+            {name: "Naukri", comment: "JOB PORTAL", url: "https://www.naukri.com", icon: "fas fa-briefcase", color: "blue"},
+            {name: "LinkedIn", comment: "JOB PORTAL + SOCIALMEDIA", url: "https://www.linkedin.com", icon: "fab fa-linkedin", color: "blue"},
+            {name: "Indeed", comment: "JOB PORTAL", url: "https://in.indeed.com", icon: "fas fa-search", color: "green"}
+        ];
+
+        const colorSchemes = {
+            blue: {bg: 'bg-blue-50', border: 'border-blue-200', icon: 'text-blue-500', hover: 'hover:border-blue-400'},
+            green: {bg: 'bg-green-50', border: 'border-green-200', icon: 'text-green-500', hover: 'hover:border-green-400'},
+            purple: {bg: 'bg-purple-50', border: 'border-purple-200', icon: 'text-purple-500', hover: 'hover:border-purple-400'}
+        };
+
+        // Generate portal cards
+        function generatePortalCards() {
+            const grid = document.getElementById('portalsGrid');
+            grid.innerHTML = '';
+            jobPortals.forEach(portal => {
+                const scheme = colorSchemes[portal.color] || colorSchemes.blue;
+                const card = document.createElement('div');
+                card.className = `portal-card rounded-2xl p-6 border-2 ${scheme.bg} ${scheme.border} ${scheme.hover} cursor-pointer transition-all duration-300`;
+                card.innerHTML = `
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">${portal.name}</h3>
+                            <p class="text-sm text-gray-600 mb-3">${portal.comment}</p>
+                        </div>
+                        <div class="w-12 h-12 ${scheme.bg} rounded-full flex items-center justify-center ml-4">
+                            <i class="${portal.icon} ${scheme.icon} text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-gray-500 truncate flex-1 mr-2">${portal.url}</span>
+                        <i class="fas fa-external-link-alt text-gray-400 text-sm"></i>
+                    </div>`;
+                card.addEventListener('click', () => window.open(portal.url, '_blank'));
+                grid.appendChild(card);
+            });
+        }
+
+        // Music controls
+        const music = document.getElementById('bgMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const muteBtn = document.getElementById('muteBtn');
+        const muteIcon = document.getElementById('muteIcon');
+        const musicStatus = document.getElementById('musicStatus');
+
+        playPauseBtn.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                playPauseIcon.classList.replace('fa-play', 'fa-pause');
+                musicStatus.textContent = 'Playing...';
+            } else {
+                music.pause();
+                playPauseIcon.classList.replace('fa-pause', 'fa-play');
+                musicStatus.textContent = 'Paused';
+            }
+        });
+
+        muteBtn.addEventListener('click', () => {
+            music.muted = !music.muted;
+            muteIcon.classList.toggle('fa-volume-up', !music.muted);
+            muteIcon.classList.toggle('fa-volume-mute', music.muted);
+        });
+
+        document.addEventListener('DOMContentLoaded', generatePortalCards);
+    </script>
+</body>
+</html>
